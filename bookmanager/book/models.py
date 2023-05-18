@@ -15,7 +15,9 @@ class BookInfo(models.Model):
     """
     # id
     name = models.CharField(max_length=10)
-
+    # 重写 str 方法让 admin 来显示书名
+    def __str__(self):
+        return self.name
 # 人物
 class PeopleInfo(models.Model):
     name = models.CharField(max_length=10)
