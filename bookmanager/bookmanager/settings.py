@@ -15,6 +15,11 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# print(__file__)
+# /home/hehe/Desktop/project-django/django_base/bookmanager/bookmanager/settings.py
+
+# print(os.path.abspath(__file__))
+# /home/hehe/Desktop/project-django/django_base/bookmanager/bookmanager/settings.py
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -23,9 +28,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'd!^!w2qxz7+s%nb!*zm5v5%0l)=o7ix*kd*9xuau32#c_aibde'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# 调试模式
+# 在我们开发的时候 , 需要看到更多的信息 , 所以要开启 debug 模式
+# 在程序上限之后 , 就改为 False
 DEBUG = True
+
+# 允许以什么形式来访问项目
 # 默认是127.0.0.1
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
