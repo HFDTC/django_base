@@ -52,11 +52,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'bookmanager.urls'
-
+# 模板配置相关
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 路径 ,告诉系统模板文件在哪 ,与数据库 dir 相同 , 故直接复制即可 ,修改路径
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
