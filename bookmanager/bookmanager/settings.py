@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'book',  # 方案一
-    # 'book.apps.BookConfig',     # 方案二
+    # 'book',  # 方案一
+    'book.apps.BookConfig',     # 方案二
 ]
 
 MIDDLEWARE = [
@@ -86,8 +86,16 @@ WSGI_APPLICATION = 'bookmanager.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+        # 切换为 mysql
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '127.0.0.1',                # 主机
+        'PORT': 3306,                       # 端口号
+        'USER': 'root',                     # 用户名
+        'PASSWORD': 'HFWD31173718299',      # 密码
+        'NAME': 'book_itcase'               # 数据库
     }
 }
 
@@ -127,7 +135,7 @@ USE_TZ = True
 
 # 浏览器访问的路径地址
 STATIC_URL = '/static/'
-# 指定静态资源路径
+# 指定静态资源路径 (项目文件包在哪)
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
